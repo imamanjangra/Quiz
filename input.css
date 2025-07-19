@@ -1,0 +1,160 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contaner_input{
+    padding: 10px;
+    height: auto;
+    width: 30vw;
+    border: 2px solid black;
+}
+#option{
+    padding: 1vw;
+}
+#main_ol{
+    padding: 1vw;
+}
+.input_q{
+    height: 2.5vw;
+    width: 25vw;
+}
+.same_sub_option{
+    margin-left: 1vw;
+}
+.same_o{
+    margin-right: 5px;
+    height: 1.5vw;
+    width: 15vw;
+}
+.second_q{
+     height: 2.5vw;
+     width: 25vw;
+     margin-bottom: 1vw;
+}
+.same_p{
+    margin: 1vw;
+}
+.q_delete{
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    justify-content: center;
+    align-items: center;
+    margin-left: 4px;
+    height: 2vw;
+    width: 2vw;
+
+}
+
+#input_time{
+    line-height: 1.5vw;
+    font-size: clamp(1rem, 1.2vw, 2rem);
+    color: #000000BF;
+    font-family:  "Dancing Script", cursive;;
+}
+#i_t{
+    font-size: clamp(1rem, 1vw, 2rem);
+    margin-left: 0.5vw;
+    height: 3vh;
+    width: 3vw;
+}
+#btn_i{
+     font-size: clamp(1rem, 1vw, 1rem);
+    background-color: white;
+    border: none;
+}
+#btn_input{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 2vw;
+    width: 6vw;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin-top: 1vw;
+
+}
+#btn_in_center{
+    display: flex;
+    justify-content: center;
+}
+
+#question_box{
+    height: auto;
+    width: auto;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+#btn_option_inc{
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    text-align: center;
+    background-color: white;
+    height: 1.3vw;
+    width: 1.2vw;
+}
+.btn_style{
+    font-size: clamp(1rem, 1vw, 1rem);
+    text-align: center;
+    background-color: white;
+    height: 1vw;
+    width: 1vw;
+}
+/* quiz game */
+
+body{
+    margin-top: 6vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#quiz_box{
+    display: none;
+    height: 60vh;
+    width: 20vw;
+    border: 2px solid black;
+}
+
+#nav_box{
+
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    border: 2px solid black;
+    height: 3vw;
+    width: 20vw;
+}
+#quiz_logo{
+    font-family: 'Luckiest Guy', cursive;
+    font-size: clamp(1rem, 3vw, 3rem);
+    animation: pop 0.6s ease;
+}
+#time_left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1rem, 1.1vw, 2rem);
+    position: relative;
+    left: 5vw;
+    height: 2.3vw;
+    border: 2px solid black;
+    width: 8vw;
+    border-radius: 10px;
+}
+#time{
+    font-size: clamp(1rem, 1.3vw, 2rem);
+    margin-left: 0.5vw;
+    border-radius: 10px;
+    border: 2px solid black;
+    height: 1.8vw;
+    width: 2vw;
+    text-align: center;
+    padding-top: 2px;
+}
+
+
