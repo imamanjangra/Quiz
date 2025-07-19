@@ -7,6 +7,11 @@
   font-weight: 400;
   font-style: normal;
 }
+.lobster-regular {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 #Box {
     border: none;
@@ -60,6 +65,51 @@
 #Box{
     margin-top: 1.2vw;
     margin-left: 8vw;
+}
+
+
+#main{
+    margin-top: 6vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+#info{
+     height: 10vw;
+     width: 30vw;
+}
+
+#h{
+    font-size: clamp(1rem, 2.5vw, 3rem);
+ font-family:  "Dancing Script", cursive;; 
+}
+#para{
+    line-height: 1.5vw;
+    font-size: clamp(1rem, 1.2vw, 2rem);
+    color: #000000BF;
+    font-family:  "Dancing Script", cursive;;
+}
+#img_box{
+    height: 10vw;
+    width: 10vw;
+    border: 2px solid black;
+
+}
+#btn{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 2vw;
+    width: 6vw;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin-top: 1vw;
+
+}
+#creat{
+    font-size: clamp(1rem, 1vw, 1rem);
+    background-color: white;
+    border: none;
+
 }
 
 
