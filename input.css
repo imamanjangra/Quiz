@@ -157,4 +157,27 @@ body{
     padding-top: 2px;
 }
 
+#footer_box{
+    display: flex;
+    flex-direction: row ;
+    align-items: center;
+    justify-content: space-around;
+    position:relative;
+    height: 5vw;
+    width: auto;
+    border: 2px solid black;
+    top: 300px;
+}
+#left_q{
+    text-align: center;
+    height: 2vw;
+    width: 5vw;
+    border: 2px solid black;
+}
+#next{
+     text-align: center;
+    height: 2vw;
+    width: 5vw;
+    border: 2px solid black;
+}
 
