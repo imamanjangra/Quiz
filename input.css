@@ -161,12 +161,12 @@ body{
     display: flex;
     flex-direction: row ;
     align-items: center;
-    justify-content: space-around;
-    position:relative;
+ 
+    position:fixed;
     height: 5vw;
     width: auto;
-    border: 2px solid black;
-    top: 300px;
+    
+    top: 550px;
 }
 #left_q{
     text-align: center;

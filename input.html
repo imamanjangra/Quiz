@@ -18,10 +18,10 @@
         <div id="question_box">
             <ol id="main_ol">
                 <li id="question_li">
-                    <div id="queston"><input class="input_q" type="text" placeholder="Question"></div>
+                    <div id="queston"><input class="input_q" id="q1" type="text" placeholder="Question"></div>
                         <div id="option">
                             <ol type="A" id="option_list">
-                                <li><input id="input_o1" class="same_o" type="text" placeholder="option"><i  class="fa-solid fa-trash-can s_btn "></i></li>
+                                <li><input id="q1o1" class="same_o" type="text" placeholder="option"><i  class="fa-solid fa-trash-can s_btn "></i></li>
                             </ol>
                             <div><button type="button" id="btn_option_inc">+</button></div>
                         </div>
@@ -41,14 +41,21 @@
       <div id="quiz_box">
         <div id="nav_box">
             <div id="quiz_logo">Quiz</div>
-            <div id="time_left">Time left<div id="time">0</div></div>
+            <div id="time_left">Time left<div id="time"></div></div>
         </div>
         <div id="main_box">
-           
+            <ol id="ol_q">
+                <div id="question_quiz"></div>
+                <div id="option">
+                    <ol type="A" id="op_quiz">
+                      
+                    </ol>
+                </div>
+            </ol>
         </div>
         <div id="footer_box">
             <div id="left_q"></div>
-            <div id="next"></div>
+           
         </div>
     </div>
 </body>
