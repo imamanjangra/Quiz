@@ -114,12 +114,7 @@ body{
    
     font-family:  "Dancing Script", cursive;;
 }
-#img_box{
-    height: 15vw;
-    width: auto;
-   box-shadow: 0 1px 10px black;
-   border: 5px solid black;
-}
+
 #btn{
     display: flex;
     flex-direction: column;
