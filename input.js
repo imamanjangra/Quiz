@@ -15,6 +15,32 @@ let op_quiz = document.querySelector("#op_quiz");
 let left_q = document.getElementById("left_q");
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    let background_btn = document.querySelector("#Box");
+    let current_mode = localStorage.getItem("theme");
+
+    if (!current_mode) {
+        current_mode = "light";
+        localStorage.setItem("theme", "light");
+    }
+
+    if (current_mode === "dark") {
+        document.body.classList.add("dark_mode");
+    }
+
+    background_btn.addEventListener('click', () => {
+        if (current_mode === "light") {
+            current_mode = "dark";
+            localStorage.setItem("theme", "dark");
+            document.body.classList.add("dark_mode");
+        } else {
+            current_mode = "light";
+            localStorage.setItem("theme", "light");
+            document.body.classList.remove("dark_mode");
+        }
+    });
+});
+
 function add_li(){
   let li = document.createElement("li");
   let input  = document.createElement("input");
@@ -74,6 +100,15 @@ function add_q(){
  
   btn_delete.innerHTML = '<i class="fa-solid fa-trash-can s_btn "></i>';
   q_delete.innerHTML = '<i class="fa-solid fa-xmark q_delete"></i>'
+  let ans = document.createElement("input");
+  ans.type = "text";
+  ans.placeholder = "Answer";
+  ans.classList = "same_o";
+  ans.classList = "ans_s"
+  ans.id = `a${q_no}`
+  let para_ans = document.createElement("p");
+  para_ans.innerText = "Answer"
+  para_ans.id = "ans_text";
 
   li.appendChild(input)
   main_ol.appendChild(li)
@@ -85,6 +120,7 @@ function add_q(){
 
   li.appendChild(ol);
   ol.appendChild(sub_li);
+  
   sub_li.appendChild(sub_input);
 
   sub_li.appendChild(btn_delete)
@@ -99,8 +135,12 @@ function add_q(){
   });
 
   inc_btn_subli.innerHTML = "<i class='fa-solid fa-plus btn_style'></i>";
+  inc_btn_subli.style.border = "none";
+  inc_btn_subli.style.display = "block"
+  inc_btn_subli.id = "inc_btn"
   li.appendChild(inc_btn_subli);
-
+  li.appendChild(para_ans);
+  li.appendChild(ans);
   inc_btn_subli.addEventListener('click' , ()=>{
     let li_option = document.createElement("li");
     let input_option = document.createElement("input");
@@ -124,6 +164,7 @@ function add_q(){
   q_delete.addEventListener('click', (e) => {
     li.remove();
   })
+  
 
 }
 
@@ -136,20 +177,27 @@ btn_question_inc.addEventListener('click', ()=>{
 })
 
 
+
+
 btn_i.addEventListener('click', (e) => {
     e.preventDefault();
+    
+
     quiz_box.style.display = "block";
     contaner_input.style.display = "none";
     let save_time =  time_data.value;
     let s_time = time_data.value*1000;
+
+    // if(time_data.value == 0 && time_data.value >= 0){
+    //   alert("Entre a valid Time ");
+    // }
     function clock(){
-  
-    for (let i = 1; i <= save_time; i++) {
+     
+    for (let i = save_time; i >= 1; i--) {
     setTimeout(() => {
-       
-        time_html.innerHTML = `${i}`
-    }, i*1000);
-    }
+        time_html.innerHTML = `${i}`;
+    }, (save_time - i + 1) * 1000);
+}
 
     }
     
@@ -172,7 +220,7 @@ btn_i.addEventListener('click', (e) => {
           left_q.innerHTML = "";
           let q_next_quiz = document.createElement("h1");
           let q_next_value = document.getElementById(`q${i}`);
-          q_next_quiz.innerText = `Q)${q_next_value.value}`;
+          q_next_quiz.innerText = `Q) ${q_next_value.value}`;
           question_quiz.appendChild(q_next_quiz);
 
           out_of.innerHTML = `${i} of ${q_no} `
@@ -182,24 +230,52 @@ btn_i.addEventListener('click', (e) => {
           
           clock();
           
-         const optOl = document.getElementById(`ol${i}`);
-let optCount = optOl ? optOl.querySelectorAll('input.same_o').length : 0;
+ const optOl = i === 1 ? document.getElementById("option_list") : document.getElementById(`ol${i}`);
+let optCount = optOl ? optOl.querySelectorAll("input.same_o").length : 0;        
 
 for (let j = 1; j <= optCount; j++) {
   let o_next_value = document.getElementById(`q${i}o${j}`);
+  let ans_next_value = document.getElementById(`a${i}`);
+  // console.log(ans_next_value.value);
+  
   if (!o_next_value) continue; 
+  let div = document.createElement("div");
+  let correct_icon = document.createElement("i");
+  let uncorrect_icon = document.createElement("i");
   let li = document.createElement("li");
-  li.innerText = o_next_value.value;
+  correct_icon.innerHTML = "<i class='fa-regular fa-circle-check'></i>";
+  uncorrect_icon.innerHTML = '<i class="fa-regular fa-circle-xmark"></i>'
+  correct_icon.classList = "correct_i"
+  uncorrect_icon.classList = "correct_i"
+  li.classList = "op_list"
+  div.innerText = o_next_value.value;
 
   let chek_box = document.createElement("input");
   chek_box.type = "radio";
   chek_box.name = `q${i}`;
-
-  li.appendChild(chek_box);
+  chek_box.classList = "radio_btn"
+  chek_box.style.display = "none";
+  div.classList = "op_div";
+  li.appendChild(div);
+  div.appendChild(chek_box);
   op_quiz.appendChild(li);
+  div.id = 'color_change'
+  div.addEventListener('click' , ()=>{
+    chek_box.checked = true
+    console.log("check box is clicked ");
+    console.log("Selected value:", o_next_value.value);
+    if(ans_next_value.value == o_next_value.value){
+      div.style.backgroundColor = "#90EE90"
+      div.appendChild(correct_icon)
+    } else{
+      div.style.backgroundColor = "#F08080"
+      div.appendChild(uncorrect_icon)
+    }
+  })
+ 
 }
     }, (i - 1) * s_time); 
-  }
+   }
 
     // }
 

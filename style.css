@@ -23,7 +23,10 @@
   font-weight: 400;
   font-style: normal;
 }
-
+body{
+  background-color: white;
+  color : black;
+}
 #Box {
     border: none;
     font-size: clamp(1rem, 2.2vw, 4rem);    
@@ -31,26 +34,6 @@
     cursor: pointer;
     transition: 0.5s ease-in-out;
 }
-/* 
-.dark {
-    background-color: black;
-    color: white;
-}
-
-.light {
-    background-color: white;
-    color: black;
-}
-
-#Box.dark-btn {
-    background-color: white;
-    color: black;
-}
-
-#Box.light-btn {
-    background-color: black;
-    color: white;
-} */
 
 /* css */
 
@@ -60,9 +43,10 @@
     align-items: center;
     font-size: clamp(1rem, 6vw, 1rem);    
     height: 10vh;
-    width: auto;
+    width: 100%;
     /* border: 2px solid black; */
    box-shadow: 0 1px 10px black;
+  
 }
 
 #logo{
@@ -131,10 +115,10 @@
     font-family:  "Dancing Script", cursive;;
 }
 #img_box{
-    height: 10vw;
-    width: 10vw;
-    border: 2px solid black;
-
+    height: 15vw;
+    width: auto;
+   box-shadow: 0 1px 10px black;
+   border: 5px solid black;
 }
 #btn{
     display: flex;
@@ -159,4 +143,21 @@
     text-decoration: none;
 }
 
+/*  dark and light mode button  */
+
+
+body.dark_mode {
+  background-color: #242526;
+  color: #DDDDDD;
+}
+
+.dark_mode #creat_link1 ,
+.dark_mode #creat_link2 {
+  color: #DDDDDD;
+}
+
+.dark_mode .nav, 
+.dark_mode #btn {
+  box-shadow: 0 1px 10px #DDDDDD;
+}
 

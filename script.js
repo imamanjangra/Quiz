@@ -2,12 +2,30 @@
 // start 
 
 let background_btn = document.querySelector("#Box");
-let body = document.querySelector("body");
-let nav  = document.querySelector(".nav");
-let btn =  document.getElementById("btn")
-let creat_link2 = document.getElementById("creat_link2");
-let creat_link1 = document.getElementById("creat_link1");
-let mode = "light"
+let mode = localStorage.getItem("theme");
+
+
+if(!mode){
+    mode = "light";
+    localStorage.setItem("theme" , "light");
+
+}
+
+
+ background_btn.addEventListener('click' , ()=>{
+
+if(mode ===  "light"){
+    mode = "dark"
+    localStorage.setItem("theme" , "dark");
+    document.body.classList.add('dark_mode');
+
+}else{
+    mode = "light"
+    localStorage.setItem("theme" , "light");
+    document.body.classList.remove("dark_mode");
+}
+})
+
 
 //------------------------copy code ---------------------------
 // BUBBLE ANIMATION BACKGROUND
@@ -55,32 +73,3 @@ window.addEventListener('resize', () => {
     canvas.height = window.innerHeight;
 });
 // --------------------------end------------------------------
-
- background_btn.addEventListener('click' , ()=>{
-
-if(mode ===  "light"){
-    mode = "dark"
-    body.style.backgroundColor = "black"
-    localStorage.setItem("theam" , "dark");
-
-    background_btn.style.color = "#DDDDDD"
-    body.style.color = "#DDDDDD"
-    creat_link2.style.color = "#DDDDDD"
-    creat_link1.style.color = "#DDDDDD"
-   nav.style.boxShadow = "0 1px 10px #DDDDDD";
-   btn.style.boxShadow = "0 1px 10px #DDDDDD";
-
-
-}else{
-    mode = "light"
-    localStorage.getItem("them" , "light");
-    body.style.backgroundColor = "white"
-    background_btn.style.color = "black"
-    body.style.color = "black"
-    nav.style.boxShadow = "0 1px 10px black";
-    creat_link2.style.color = "black"
-    creat_link1.style.color = "black"
-    btn.style.boxShadow = "0 1px 10px black";
-
-}
-})
